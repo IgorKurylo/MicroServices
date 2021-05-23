@@ -1,0 +1,26 @@
+version: '3'
+networks:
+  api_network:
+volumes:
+  mysql_data:
+services:
+  auth_api:
+    networks:
+      - api_network
+    build:
+      context: ./auth-api
+      dockerfile: Dockerfile
+    environment:
+      ENV_NAME: dev
+    ports:
+      - 3001:3001
+  order_api:
+    networks:
+      - api_network
+    build:
+      context: ./order-api
+      dockerfile: Dockerfile
+    environment:
+      ENV_NAME: dev
+    ports:
+      - 3002:3002

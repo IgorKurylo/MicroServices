@@ -1,0 +1,6 @@
+{
+  "dev":{
+    "auth_secret": "@#user2020",
+    "token_exp": 86400
+  }
+}
